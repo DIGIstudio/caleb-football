@@ -1,0 +1,384 @@
+/*
+Color White: rgb(255, 255, 255)
+Color Orang: rgb(237, 125, 49)
+Color Green: rgb(112, 173, 71)
+Body Font: font-family: 'Questrial', sans-serif;
+Title Font: font-family: 'Montserrat', sans-serif;
+*/
+
+/* Rules that apply to all of my website unless I add extra code teling it not to do that. Font size can now be determined by percentages instead of pixels. A font is now set out which will be my default font unless over written by some more CSS. */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+    font: 24px;
+}
+
+/* The position is fixed meaning the header will stay at the top of the page allowing the user for easy access as they scroll along the website, having the options just at the top of the screen saving them the time to scroll. The z-index is set to 2 so it stays in front of the text 'Backyard Football Programme and also on the Journey page it will stay in front of the bronze, silver and gold card which have a z-index of 1.*/
+
+header {
+    position: fixed;
+    width: 100%;
+    color: white;
+    z-index: 2;
+    
+}
+
+nav li, nav a {
+    display: inline-block;
+}
+/*Allows me to have my navigation bar in the middle for easier acess and make it look right as when it was floated left or right did not look as clean or modern.*/
+nav ul {
+    text-align: center;
+}
+
+/* This codes for the design of my header. Text decoration removes the typical link 'look'. Padding gives it the size of the box that it is in. The wild card CSS allows me to use percentages. Color is text color and background-color is the white box it is in. The transition effect of 1s means the hover effect comes into effect over time not instantly giving it a clean look that is jarring. The border radius gives the edges of the boxes slight curves. The border says 3px which is the width of the line and solid rgb allows me to give it the color. */
+
+nav a {
+    text-decoration: none;
+    padding: 2px 15px;
+    font-size: 300%;
+    color: rgb(237, 125, 49);
+    background-color: rgb(255, 255, 255);
+    transition: 1s;
+    border-radius: 10px;
+    border: 3px solid rgb(237, 125, 49);
+    
+}
+
+/* The color of the text and border line changes when you hover with the mouse. The border radius also is increased to give the more curved look. */
+
+nav a:hover {
+    color: rgb(112, 173, 71);
+    border: 3px solid rgb(112, 173, 71);
+    border-radius: 50px;
+    
+}
+
+/* The same as the nav a block except size and colors have been changed. */
+.active{
+    text-decoration: none;
+    padding: 25px 30px;
+    color: rgb(112, 173, 71);
+    transition: 0.5s;
+    font-size: 300%;
+    border: 3px solid rgb(112, 173, 71);
+}
+
+.active:hover{
+    color: rgb(237, 125, 49);
+    border: 3px solid rgb(237, 125, 49);
+    border-radius: 50px;
+    background-color: white;
+}
+
+/* Three different classes for each page allow me to have the same coding but the background image is changed to allow for different images.*/
+.home-hero {
+    background-image: url(images/Backyard_Hero.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding-top: 200px;
+    background-attachment: fixed;
+}
+
+.journey-hero {
+    background-image: url(images/Journey_Hero.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding-top: 200px;
+    background-attachment: fixed;
+}
+
+.game-hero {
+    background-image: url(images/Games_Hero.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding-top: 200px;
+    background-attachment: fixed;
+}
+
+/* The many-image class is for the Journey and Games pages so I can have the large images after the Hero Image with all the same formatting. The id's allow for me to have all the seperate images with the linea-gradient overlay on the image. */
+.many-image {
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+    padding-top: 200px;
+    background-attachment: inherit;
+}
+
+#player-card {
+    background-image: linear-gradient(rgba(112, 173, 71, 0.6), rgba(237, 125, 49, 0.6)), url(images/player_cards.jpg);
+}
+
+#player-clubs{
+    background-image: linear-gradient(rgba(112, 173, 71, 0.6), rgba(237, 125, 49, 0.6)), url(images/player-clubs.jpg);
+    
+}
+
+#player-games{
+    background-image: linear-gradient(rgba(112, 173, 71, 0.6), rgba(237, 125, 49, 0.6)), url(images/kid_games.jpg)
+}
+
+#one-touch {
+    background-image: linear-gradient(rgba(112, 173, 71, 0.6), rgba(237, 125, 49, 0.6)), url(images/one-touch.JPG);
+}
+
+#striker-keeper {
+    background-image: linear-gradient(rgba(112, 173, 71, 0.6), rgba(237, 125, 49, 0.6)), url(images/striker-keeper.JPG);
+}
+
+#header-volley {
+    background-image: linear-gradient(rgba(112, 173, 71, 0.6), rgba(237, 125, 49, 0.6)), url(images/Headers_Volleys.JPG);
+}
+
+#more-coming {
+    background-image: linear-gradient(rgba(112, 173, 71, 0.6), rgba(237, 125, 49, 0.6)), url(images/more_come.JPG)
+}
+
+/* This here is how I position my cards and give them there sizing and hover effects. The Z-index is set to 0 on all of them so when the hover effect comes into play it brings the hovered image to the front as the z-index for the hover effect is 1. Position is absolute so I can set the images where I want them to be on the page. */
+#bronze {
+    width: 10%;
+    position: absolute;
+    top: 102vh;
+    left: 2%;
+    transition: 0.7s;
+    z-index: 0;
+}
+
+#silver {
+    width: 10%;
+    position: absolute;
+    top: 107vh;
+    left: 12%;
+    transition: 0.7s;
+    z-index: 0;
+}
+
+#gold {
+    width: 10%;
+    position: absolute;
+    top: 112vh;
+    left: 22%;
+    transition: 0.7s;
+    z-index: 0;
+}
+
+#bronze:hover {
+    transform: scale(1.4);
+    z-index: 1;
+}
+
+#silver:hover {
+    transform: scale(1.4);
+    z-index: 1;
+}
+
+#gold:hover {
+    transform: scale(1.4);
+    z-index: 1;
+}
+/*Media Queries here allows me to have the cards that do not cover text as the page size changes. */
+@media only screen and (min-width: 955px) {
+        #bronze {
+        width: 8%;
+        position: absolute;
+        top: 102vh;
+        left: 6%;
+        transition: 0.7s;
+        z-index: 0;
+    }
+
+    #silver {
+        width: 8%;
+        position: absolute;
+        top: 107vh;
+        left: 12%;
+        transition: 0.7s;
+        z-index: 0;
+    }
+
+    #gold {
+        width: 8%;
+        position: absolute;
+        top: 112vh;
+        left: 18%;
+        transition: 0.7s;
+        z-index: 0;
+    }
+
+    #bronze:hover {
+        transform: scale(1.4);
+        z-index: 1;
+    }
+
+
+    #silver:hover {
+        transform: scale(1.4);
+        z-index: 1;
+    }
+
+    #gold:hover {
+        transform: scale(1.4);
+        z-index: 1;
+    }
+}
+
+/* This CSS allows me to choose where the title is exactly on the page and chooses colors, fonts and sizes. The z-index is 0 so the header is in front of the title. Each id is the name of the word in the title. */
+#backyard {
+    position: absolute;
+    top: 40vh;
+    left: 27%;
+    right: 35%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10vh;
+    color: rgb(112, 173, 71);
+    z-index: 0;
+}
+
+#football {
+    position: absolute;
+    top: 50vh;
+    left: 27%;
+    right: 35%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10vh;
+    color: rgb(237, 125, 49);
+    z-index: 0;
+}
+
+#programme {
+    position: absolute;
+    top: 60vh;
+    left: 27%;
+    right: 35%;
+    font-size: 10vh;
+    color: white;
+    z-index: 0;
+}
+
+/* This changes the position and size of the image that I have place in the hero image sections. It is to show the user to scroll down. When you hover on the arrow the position changes furthering enhcancing why the user should scroll down. */ 
+.arrow {
+    position: absolute;
+    width: 20%;
+    top: 70vh;
+    left: 40%;
+    right: 50%;
+    transition: 0.7s;
+    z-index: 0;
+}
+
+.arrow:hover {
+    position: absolute;
+    width: 20%;
+    top: 72vh;
+    left: 40%;
+    right: 50%;
+    transition: 0.7s;
+}
+
+/* Codes for the size of the image gallery not the images! Although it is a gallery for images you use text-align to centre the gallery. */
+.img-gallery {
+    width: 90%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+/* Codes for each img in the gallery, the border radius creates the circular effect. The margin means each image is right next to each other. Transition effect allows for smooth transition to the hover effect.*/
+.img-gallery img {
+    width: 19%;
+    transition: 0.7s;
+    border-radius: 50%;
+    margin: 0% 0;
+    text-align: center;
+}
+
+/* Makes the images square with round edges when hovered over. */
+.img-gallery img:hover {
+    border-radius: 10%
+
+}
+
+
+/* Gives the large image at the bottom of my Home page the size and positioning. Attachment is fixed so text block and title block scroll up over it. Position is center so the images is centered in the page. */
+.large-image {
+    background-image: linear-gradient(rgba(112, 173, 71, 0.6), rgba(237, 125, 49, 0.6)), url(images/Football_Friend.jpg);
+    height: 900px;
+    background-position: left;
+    background-size: cover;
+    padding-top: 200px;
+    background-attachment: fixed;
+}
+
+/* Codes for the text blocks and where they sit on the page. Changes with the width of the page because of the uses of width and max-width. Justified to give it that clean finishes feel. A class for whit-text so some text blocks are white. */
+.text-block {
+    margin: 50px auto;
+    max-width: 1200px; 
+    width: 90%;
+    line-height: 150%;
+    text-align: justify;
+    font-size: 150%;
+    z-index: 1;
+}
+
+.white-text {
+    color: white;
+}
+
+/* The title block which is sets each part of my document apart from each other. Line height makes it a thicker block and follows the same rules of my text block changing width depending on size of page. */
+.title-block {
+    margin: 3% auto;
+    max-width: 1200px; 
+    width: 90%;
+    line-height: 300%;
+    text-align: center;
+    background-color: rgb(112, 173, 71);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Codes for the buttons on most of my pages. Position relative means it stays where it needs to stay withing the section and because I use this class alot the positon relative means it stays in the right positon on each section. */
+
+.button-block {
+    position: relative;
+    left: 19%;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(237, 125, 49);
+    font-size: 300%;
+    line-height: 130%;
+    border: 3px solid rgb(237, 125, 0);
+    border-radius: 10px;
+}
+
+/* Codes for the footer at the bottom of each page. All concepts already previously discussed. */
+footer {
+    background-color: rgb(112, 173, 71);
+    color: white;
+    font-size: 90%;
+    padding-top: 40px; 
+}
+
+footer h3 {
+    font-size: 180%;
+    padding: 2%
+
+}
+
+footer h4 {
+   padding-top: 11px;
+    font-size: 170%;
+    background-color: rgb(237, 125, 49)
+    
+}
+
+footer ul {
+    font-size: 130%;
+    background-color: rgb(237, 125, 49);
+}
+
